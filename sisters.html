@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SistersBakery | Custom Cakes & Sweet Treats in Kigali</title>
+    <meta name="description" content="Handcrafted cakes, cupcakes, and pastries baked fresh in Kigali for birthdays, weddings, and celebrations. Delivery available across Kigali.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #fff9f9;
+            color: #5a3e36;
+        }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1089&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 80vh;
+        }
+        .title-font {
+            font-family: 'Pacifico', cursive;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .icing-effect {
+            position: relative;
+        }
+        .icing-effect:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0,0 Q25,10 50,0 T100,0" fill="%23f8d7da" /></svg>');
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="title-font text-2xl md:text-3xl text-pink-600">SistersBakery</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-pink-600 hover:text-pink-800">Home</a>
+                <a href="#menu" class="hover:text-pink-600">Menu</a>
+                <a href="#custom" class="hover:text-pink-600">Custom Orders</a>
+                <a href="#gallery" class="hover:text-pink-600">Gallery</a>
+                <a href="#about" class="hover:text-pink-600">About</a>
+                <a href="#contact" class="hover:text-pink-600">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-pink-600">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white pb-4 px-4">
+            <a href="#home" class="block py-2 text-pink-600">Home</a>
+            <a href="#menu" class="block py-2">Menu</a>
+            <a href="#custom" class="block py-2">Custom Orders</a>
+            <a href="#gallery" class="block py-2">Gallery</a>
+            <a href="#about" class="block py-2">About</a>
+            <a href="#contact" class="block py-2">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero flex items-center justify-center text-center text-white">
+        <div class="container mx-auto px-4">
+            <h1 class="title-font text-4xl md:text-6xl mb-4">Baked with Love for Every Occasion</h1>
+            <p class="text-xl md:text-2xl mb-8">Celebrate Life. One Slice at a Time.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#custom" class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-6 rounded-full transition duration-300">Order a Cake</a>
+                <a href="#menu" class="bg-white hover:bg-gray-100 text-pink-600 font-bold py-3 px-6 rounded-full transition duration-300">View Menu</a>
+                <a href="https://wa.me/250791998418" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+            <div class="mt-8 bg-white bg-opacity-20 backdrop-blur-sm rounded-lg inline-block p-4">
+                <div class="flex flex-wrap justify-center gap-4 text-sm">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Gisozi, Kigali</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-phone"></i>
+                        <span>0791998418</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-truck"></i>
+                        <span>Delivery available</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Sisters Baking" class="w-full rounded-xl shadow-lg">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="title-font text-3xl md:text-4xl mb-6 text-pink-600">Our Story</h2>
+                    <p class="text-lg mb-4">SistersBakery began in 2018 when two sisters, Marie and Grace, decided to turn their passion for baking into a business. What started as a small home kitchen has grown into Kigali's favorite bakery for custom celebration cakes and treats.</p>
+                    <p class="text-lg mb-6">Every cake we make tells your story—sweetly. We believe in using only the freshest ingredients, crafting each creation with love, and making every celebration extra special.</p>
+                    <div class="bg-pink-50 rounded-lg p-6">
+                        <p class="italic text-pink-700">"Our mission is simple: to spread joy through delicious, beautiful baked goods that make your celebrations unforgettable."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-pink-50">
+        <div class="container mx-auto px-4">
+            <h2 class="title-font text-3xl md:text-4xl text-center mb-12 text-pink-600">Our Sweet Gallery</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Birthday Cake" class="w-full h-48 object-cover hover:scale-105 transition duration-500">
+                    <div class="p-3 bg-white">
+                        <p class="text-sm text-gray-600">🎂 Birthday Cake</p>
+                    </div>
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Wedding Cake" class="w-full h-48 object-cover hover:scale-105 transition duration-500">
+                    <div class="p-3 bg-white">
+                        <p class="text-sm text-gray-600">💍 Wedding Cake</p>
+                    </div>
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1627834377411-8da5f4f09de8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" alt="Graduation Cake" class="w-full h-48 object-cover hover:scale-105 transition duration-500">
+                    <div class="p-3 bg-white">
+                        <p class="text-sm text-gray-600">🎓 Graduation Cake</p>
+                    </div>
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Cupcakes" class="w-full h-48 object-cover hover:scale-105 transition duration-500">
+                    <div class="p-3 bg-white">
+                        <p class="text-sm text-gray-600">🧁 Cupcake Tower</p>
+                    </div>
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1603532648955-039310d9ed75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Cinnamon Rolls" class="w-full h-48 object-cover hover:scale-105 transition duration-500">
+                    <div class="p-3 bg-white">
+                        <p class="text-sm text-gray-600">🥮 Cinnamon Rolls</p>
+                    </div>
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Doughnuts" class="w-full h-48 object-cover hover:scale-105 transition duration-500">
+                    <div class="p-3 bg-white">
+                        <p class="text-sm text-gray-600">🍩 Doughnuts</p>
+                    </div>
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1065&q=80" alt="Cookies" class="w-full h-48 object-cover hover:scale-105 transition duration-500">
+                    <div class="p-3 bg-white">
+                        <p class="text-sm text-gray-600">🍪 Cookie Box</p>
+                    </div>
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" alt="Custom Cake" class="w-full h-48 object-cover hover:scale-105 transition duration-500">
+                    <div class="p-3 bg-white">
+                        <p class="text-sm text-gray-600">✨ Custom Design</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="title-font text-3xl md:text-4xl text-center mb-12 text-pink-600">Sweet Words From Our Customers</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="relative overflow-hidden">
+                    <div id="testimonial-slider" class="flex transition-transform duration-500">
+                        <div class="min-w-full px-4">
+                            <div class="bg-pink-50 rounded-xl p-8 text-center">
+                                <div class="text-yellow-400 text-2xl mb-4">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <p class="text-lg italic mb-6">"The graduation cake SistersBakery made for my daughter was absolutely stunning! It tasted even better than it looked. Everyone at the party was asking where we got it."</p>
+                                <div class="font-bold">- Alice K., Kigali</div>
+                            </div>
+                        </div>
+                        <div class="min-w-full px-4">
+                            <div class="bg-pink-50 rounded-xl p-8 text-center">
+                                <div class="text-yellow-400 text-2xl mb-4">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <p class="text-lg italic mb-6">"I order cupcakes from SistersBakery every month for my office. They're always fresh, delicious, and beautifully decorated. The team is so easy to work with!"</p>
+                                <div class="font-bold">- David M., Kigali</div>
+                            </div>
+                        </div>
+                        <div class="min-w-full px-4">
+                            <div class="bg-pink-50 rounded-xl p-8 text-center">
+                                <div class="text-yellow-400 text-2xl mb-4">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <p class="text-lg italic mb-6">"Our wedding cake was beyond perfect! They captured our vision exactly and delivered it right on time. The flavors were incredible - our guests are still talking about it."</p>
+                                <div class="font-bold">- Grace & James, Kigali</div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="prev-testimonial" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md ml-2">
+                        <i class="fas fa-chevron-left text-pink-600"></i>
+                    </button>
+                    <button id="next-testimonial" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md mr-2">
+                        <i class="fas fa-chevron-right text-pink-600"></i>
+                    </button>
+                </div>
+                <div class="flex justify-center mt-4 space-x-2">
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-pink-200" data-index="0"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-pink-200" data-index="1"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-pink-200" data-index="2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-16 bg-pink-50">
+        <div class="container mx-auto px-4">
+            <h2 class="title-font text-3xl md:text-4xl text-center mb-12 text-pink-600">Our Menu</h2>
+            
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                    <i class="fas fa-birthday-cake text-pink-500"></i>
+                    <span>Cakes</span>
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Birthday Cake" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold text-lg">Birthday Cakes</h4>
+                            <p class="text-gray-600 text-sm mb-2">Custom designs for all ages</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-pink-600">From 25,000 RWF</span>
+                                <button class="text-pink-600 hover:text-pink-800 font-semibold text-sm">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Wedding Cake" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold text-lg">Wedding Cakes</h4>
+                            <p class="text-gray-600 text-sm mb-2">Elegant designs for your special day</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-pink-600">From 80,000 RWF</span>
+                                <button class="text-pink-600 hover:text-pink-800 font-semibold text-sm">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1627834377411-8da5f4f09de8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" alt="Graduation Cake" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold text-lg">Graduation Cakes</h4>
+                            <p class="text-gray-600 text-sm mb-2">Celebrate academic achievements</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-pink-600">From 30,000 RWF</span>
+                                <button class="text-pink-600 hover:text-pink-800 font-semibold text-sm">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                    <i class="fas fa-cupcake text-pink-500"></i>
+                    <span>Cupcakes</span>
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="bg-white rounded-lg shadow-md p-4 text-center">
+                        <div class="h-32 w-32 mx-auto mb-3 overflow-hidden rounded-full">
+                            <img src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Vanilla Cupcake" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-bold">Vanilla</h4>
+                        <p class="text-gray-600 text-sm mb-2">Classic vanilla with buttercream</p>
+                        <div class="font-bold text-pink-600">1,500 RWF</div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-4 text-center">
+                        <div class="h-32 w-32 mx-auto mb-3 overflow-hidden rounded-full">
+                            <img src="https://images.unsplash.com/photo-1611293388250-580b08c4a145?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=988&q=80" alt="Chocolate Cupcake" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-bold">Chocolate</h4>
+                        <p class="text-gray-600 text-sm mb-2">Rich chocolate with ganache</p>
+                        <div class="font-bold text-pink-600">1,700 RWF</div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-4 text-center">
+                        <div class="h-32 w-32 mx-auto mb-3 overflow-hidden rounded-full">
+                            <img src="Red Velvet.jpg" alt="Red Velvet Cupcake" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-bold">Red Velvet</h4>
+                        <p class="text-gray-600 text-sm mb-2">Velvety texture with cream cheese</p>
+                        <div class="font-bold text-pink-600">2,000 RWF</div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-4 text-center">
+                        <div class="h-32 w-32 mx-auto mb-3 overflow-hidden rounded-full">
+                            <img src="https://images.unsplash.com/photo-1599785209796-786432b228bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=986&q=80" alt="Lemon Cupcake" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-bold">Lemon</h4>
+                        <p class="text-gray-600 text-sm mb-2">Zesty lemon with citrus frosting</p>
+                        <div class="font-bold text-pink-600">1,800 RWF</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                    <i class="fas fa-cookie-bite text-pink-500"></i>
+                    <span>Pastries & Cookies</span>
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1603532648955-039310d9ed75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Cinnamon Rolls" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold text-lg">Cinnamon Rolls</h4>
+                            <p class="text-gray-600 text-sm mb-2">Freshly baked with cream cheese icing</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-pink-600">1,500 RWF each</span>
+                                <button class="text-pink-600 hover:text-pink-800 font-semibold text-sm">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Doughnuts" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold text-lg">Doughnuts</h4>
+                            <p class="text-gray-600 text-sm mb-2">Delicious doughnuts in various flavors</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-pink-600">1,000 RWF each</span>
+                                <button class="text-pink-600 hover:text-pink-800 font-semibold text-sm">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" alt="Custom Cake" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold text-lg">Custom Cake</h4>
+                            <p class="text-gray-600 text-sm mb-2">Custom design for any occasion</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-pink-600">From 30,000 RWF</span>
+                                <button class="text-pink-600 hover:text-pink-800 font-semibold text-sm">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Orders Section -->
+    <section id="custom" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="title-font text-3xl md:text-4xl text-center mb-12 text-pink-600">Custom Cake Orders</h2>
+            <div class="max-w-2xl mx-auto bg-pink-50 rounded-xl shadow-md p-8">
+                <form>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-gray-700 mb-2">Your Name</label>
+                            <input type="text" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2">Phone Number</label>
+                            <input type="tel" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500">
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-gray-700 mb-2">Occasion</label>
+                        <select class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500">
+                            <option>Birthday</option>
+                            <option>Wedding</option>
+                            <option>Graduation</option>
+                            <option>Anniversary</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-gray-700 mb-2">Desired Date</label>
+                            <input type="date" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2">Delivery Location</label>
+                            <input type="text" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500">
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-gray-700 mb-2">Design Reference (Optional)</label>
+                        <input type="file" class="w-full">
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-gray-700 mb-2">Special Instructions</label>
+                        <textarea rows="4" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500"></textarea>
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <button type="submit" class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-6 rounded-full transition duration-300">Submit Request</button>
+                        <a href="https://wa.me/250791998418" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-pink-50">
+        <div class="container mx-auto px-4">
+            <h2 class="title-font text-3xl md:text-4xl text-center mb-12 text-pink-600">Contact & Delivery</h2>
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <div class="bg-white rounded-xl shadow-md p-6 h-full">
+                        <h3 class="text-2xl font-bold mb-4">Get in Touch</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-map-marker-alt text-pink-600 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold">Location</h4>
+                                    <p>Gisozi, Kigali, Rwanda</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-phone text-pink-600 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold">Phone</h4>
+                                    <p>0791998418</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-truck text-pink-600 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold">Delivery</h4>
+                                    <p>We deliver anywhere in Kigali. Delivery cost depends on your location.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h4 class="font-bold mb-4">Send us a message</h4>
+                            <form>
+                                <div class="mb-4">
+                                    <input type="text" placeholder="Your Name" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500">
+                                </div>
+                                <div class="mb-4">
+                                    <input type="email" placeholder="Your Email" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500">
+                                </div>
+                                <div class="mb-4">
+                                    <textarea rows="4" placeholder="Your Message" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500"></textarea>
+                                </div>
+                                <button type="submit" class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 px-6 rounded-full transition duration-300">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden h-full">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.490317807832!2d30.0900003147578!3d-1.953537998562202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca76b4418c245%3A0x1d3b6d1d1b1b1b1b!2sGisozi%2C%20Kigali%2C%20Rwanda!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
